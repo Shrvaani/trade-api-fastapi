@@ -1,0 +1,48 @@
+1. Introduction:
+This document provides an overview of the Trade API solution implemented using FastAPI in Python. It explains the features and functionalities of the API and discusses the reasoning behind the chosen approach. The solution aims to provide a RESTful API for managing trades, including listing trades, searching trades, filtering trades, implementing pagination, and sorting.
+
+2. Solution Overview:
+The Trade API solution is built using the FastAPI framework, which provides a high-performance web framework for building APIs with Python. The solution consists of the following main components:
+* main.py: This is the main entry point of the application. It defines the FastAPI application, including the API routes, request and response models, and the corresponding handler functions.
+
+* database.py: This module simulates a database using a list of trade objects. It provides functions to fetch trades, filter trades based on various criteria, and perform sorting.
+
+* models.py: This module contains the data models used in the application, including the Trade model, which represents a trade object.
+
+* utils.py: This module contains utility functions used in the application, such as date parsing and string matching.
+
+3. Features and Functionality:
+* List Trades:
+    Endpoint: GET /trades
+    Description: Retrieves a list of all trades.
+    Response: Returns a list of trade objects.
+* Search Trades:
+    Endpoint: GET /trades/search
+    Description: Allows searching trades based on specific fields.
+* Query Parameters:
+    search: Text to search for in trade fields (counterparty, instrumentId, instrumentName, trader).
+    Response: Returns a list of trade objects matching the search query.
+* Filter Trades:
+    Endpoint: GET /trades/filter
+    Description: Allows filtering trades based on optional query parameters.
+* Query Parameters:
+    assetClass: Asset class of the trade.
+    start: Minimum date for the tradeDateTime field.
+    end: Maximum date for the tradeDateTime field.
+    minPrice: Minimum value for the tradeDetails.price field.
+    maxPrice: Maximum value for the tradeDetails.price field.
+    tradeType: Trade type (BUY or SELL).
+    Response: Returns a list of trade objects matching the filter criteria.
+4. Pagination and Sorting:
+* Pagination: The /trades, /trades/search, and /trades/filter endpoints support pagination using the query parameters: limit (number of trades per page) and offset (index of the first trade in the page).
+* Sorting: The /trades, /trades/search, and /trades/filter endpoints support sorting using the query parameter: sort_by (field to sort by) and sort_order (ascending or descending).
+
+5. Reasoning Behind the Approach:
+* FastAPI: FastAPI was chosen as the framework due to its high performance, easy-to-use syntax, and built-in support for data validation and documentation generation. It provides a great balance between development speed and runtime performance.
+* Simulated Database: For simplicity, a simulated in-memory database was used instead of an actual database system. This allows focusing on the API implementation without the need for database setup and configuration.
+* Separation of Concerns: The solution follows a modular approach with separate modules for routes, models, database operations, and utility functions. This promotes code organization and maintainability.
+* Request and Response Models: FastAPI leverages Pydantic for request and response models. This ensures data validation, serialization, and automatic documentation generation based on the defined models.
+* Query Parameters: The chosen approach allows flexibility in providing optional query parameters for filtering, searching, pagination, and sorting. Users can customize their requests based on their specific requirements.
+
+6. Conclusion:
+The Trade API solution provides a comprehensive set of features for managing trades through a RESTful API. It supports listing trades, searching trades based on specific fields, filtering trades based on various criteria, and implementing pagination and sorting. The chosen approach using FastAPI ensures high performance, data validation, and automatic documentation generation. The solution can be extended further to meet additional requirements and integrate with a persistent database system if needed.
