@@ -18,8 +18,8 @@ Make sure you have the following software installed on your machine:
 
 1. Clone the repository:
 
-   ```bash
-   git clone [<repository_url>](https://github.com/Shrvaani/trade-api-fastapi)
+ 
+   git clone (https://github.com/Shrvaani/trade-api-fastapi)
 2. Change into the project directory:
 cd trade-api
 
