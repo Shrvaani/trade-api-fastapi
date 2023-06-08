@@ -1,7 +1,7 @@
 # trade-api-fastapi
 # Trade API
 
-This is a Trade API implemented using FastAPI framework. It provides endpoints to manage trades and traders.
+The Trade API is a web application developed using the FastAPI framework in Python. It provides a RESTful API for managing trades and traders. The API allows users to perform various operations such as listing trades, searching trades by different criteria, filtering trades based on parameters like asset class, date range, price range, and trade type (BUY or SELL), and implementing pagination and sorting.
 
 ## Getting Started
 
